@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos de Barbeiro | Moustaque Academy</title>
+  <meta name="description" content="Cursos presenciais de barbearia da Moustaque Academy em Poços de Caldas. Aprenda corte, barba e técnicas profissionais." />
+  <meta name="theme-color" content="#080808" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cursos.css" />
+</head>
+<body class="is-loading courses-page">
+  <a class="skip-link" href="#cursos">Ir para os cursos</a>
+  <div class="preloader" id="preloader" aria-hidden="true"><div class="preloader__content"><div class="brand-mark brand-mark--loading"><span class="brand-mark__ornament">M</span></div><p class="preloader__word">Moustaque</p><div class="preloader__track"><span class="preloader__progress"></span></div><span class="preloader__counter">00</span></div></div>
+  <div class="cursor cursor--dot" aria-hidden="true"></div><div class="cursor cursor--outline" aria-hidden="true"></div><div class="mouse-glow" aria-hidden="true"></div><canvas class="particles-canvas" id="gold-particles" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="site-header"><div class="container site-header__inner">
+    <a class="brand" href="index.html" aria-label="Moustaque — Página inicial"><span class="brand__monogram">M</span><span class="brand__text"><strong>Moustaque</strong><small>Men`s Club</small></span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal"><ul class="main-nav__list"><li><a class="main-nav__link" href="index.html">Início</a></li><li><a class="main-nav__link" href="agendamento.html">Agendamento</a></li><li><a class="main-nav__link" href="loja.html">Loja</a></li><li><a class="main-nav__link is-active" href="cursos.html">Cursos</a></li><li><a class="main-nav__link" href="galeria.html">Galeria</a></li><li><a class="main-nav__link" href="contato.html">Contato</a></li></ul><a class="button button--gold main-nav__cta" href="#cursos">Ver cursos <i class="fa-solid fa-graduation-cap"></i></a></nav>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false"><span></span><span></span></button>
+  </div></header>
+
+  <main id="conteudo-principal">
+    <section class="courses-hero"><div class="courses-hero__image" data-parallax="0.1"></div><div class="courses-hero__overlay"></div><div class="container courses-hero__content" data-aos="fade-up"><div class="breadcrumbs"><a href="index.html">Início</a><i class="fa-solid fa-diamond"></i><span>Cursos</span></div><span class="section-kicker">Moustaque Academy</span><h1>Transforme técnica em <em>profissão.</em></h1><p>Formação prática, acompanhamento próximo e os fundamentos que constroem barbeiros preparados para o mercado.</p><a class="button button--gold button--large" href="#cursos">Conhecer formações <i class="fa-solid fa-arrow-down"></i></a></div></section>
+
+    <section class="academy-benefits"><div class="container academy-benefits__grid"><article data-aos="fade-up"><i class="fa-solid fa-hand-scissors"></i><div><strong>Prática de verdade</strong><span>Aulas demonstrativas e execução acompanhada.</span></div></article><article data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-user-group"></i><div><strong>Turmas reduzidas</strong><span>Mais atenção para cada aluno.</span></div></article><article data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-certificate"></i><div><strong>Certificado</strong><span>Conclusão reconhecida pela Moustaque Academy.</span></div></article></div></section>
+
+    <section class="courses-catalog" id="cursos"><div class="container"><header class="section-heading section-heading--center" data-aos="fade-up"><span class="section-kicker">Escolha sua jornada</span><h2 class="section-title">Formações para cada <em>momento profissional.</em></h2><p class="section-intro">Da primeira tesoura ao aperfeiçoamento de técnicas avançadas.</p></header>
+      <div class="course-grid">
+        <article class="course-card" data-aos="fade-up"><div class="course-card__media"><img src="img/salao-atendimento.webp" alt="Formação prática dentro da Moustaque" loading="lazy" /><span>Iniciante</span></div><div class="course-card__body"><div class="course-card__meta"><span><i class="fa-regular fa-clock"></i> 40 horas</span><span><i class="fa-solid fa-location-dot"></i> Presencial</span></div><h2>Barbeiro Profissional — Do Zero</h2><p>Fundamentos completos para iniciar na profissão com segurança, técnica e visão de atendimento.</p><ul><li><i class="fa-solid fa-check"></i> Ferramentas e biossegurança</li><li><i class="fa-solid fa-check"></i> Cortes clássicos e degradê</li><li><i class="fa-solid fa-check"></i> Barba, acabamento e atendimento</li></ul><div class="course-card__footer"><div><small>Investimento</small><strong>R$ 1.497</strong><span>ou consulte parcelamento</span></div><button class="button button--gold course-buy" type="button" data-course="Barbeiro Profissional — Do Zero" data-price="R$ 1.497,00">Quero me inscrever <i class="fa-brands fa-whatsapp"></i></button></div></div></article>
+
+        <article class="course-card course-card--featured" data-aos="fade-up" data-aos-delay="120"><div class="course-card__badge">Mais procurado</div><div class="course-card__media"><img src="img/pedro.webp" alt="Referência profissional para o curso Fade Master" loading="lazy" /><span>Intermediário</span></div><div class="course-card__body"><div class="course-card__meta"><span><i class="fa-regular fa-clock"></i> 16 horas</span><span><i class="fa-solid fa-location-dot"></i> Presencial</span></div><h2>Fade Master</h2><p>Domine transições limpas, leitura de crânio e finalizações que valorizam cada tipo de cabelo.</p><ul><li><i class="fa-solid fa-check"></i> Low, mid e high fade</li><li><i class="fa-solid fa-check"></i> Controle de marcações</li><li><i class="fa-solid fa-check"></i> Textura e fotografia do resultado</li></ul><div class="course-card__footer"><div><small>Investimento</small><strong>R$ 697</strong><span>ou consulte parcelamento</span></div><button class="button button--gold course-buy" type="button" data-course="Fade Master" data-price="R$ 697,00">Quero me inscrever <i class="fa-brands fa-whatsapp"></i></button></div></div></article>
+
+        <article class="course-card" data-aos="fade-up" data-aos-delay="240"><div class="course-card__media"><img src="img/ritual-barba.webp" alt="Design e cuidado profissional de barba" loading="lazy" /><span>Especialização</span></div><div class="course-card__body"><div class="course-card__meta"><span><i class="fa-regular fa-clock"></i> 12 horas</span><span><i class="fa-solid fa-location-dot"></i> Presencial</span></div><h2>Barba & Visagismo</h2><p>Crie desenhos equilibrados e experiências premium com análise facial, toalha quente e produtos.</p><ul><li><i class="fa-solid fa-check"></i> Leitura de formato facial</li><li><i class="fa-solid fa-check"></i> Navalha e simetria</li><li><i class="fa-solid fa-check"></i> Ritual premium de barba</li></ul><div class="course-card__footer"><div><small>Investimento</small><strong>R$ 497</strong><span>ou consulte parcelamento</span></div><button class="button button--gold course-buy" type="button" data-course="Barba & Visagismo" data-price="R$ 497,00">Quero me inscrever <i class="fa-brands fa-whatsapp"></i></button></div></div></article>
+      </div>
+    </div></section>
+
+    <section class="academy-cta"><div class="container academy-cta__card" data-aos="zoom-in"><div><span class="section-kicker">Ainda tem dúvidas?</span><h2>Converse com nossa equipe <em>antes de escolher.</em></h2><p>Conte seu momento profissional e receba orientação sobre a formação ideal.</p></div><a class="button button--outline button--large" href="#" data-whatsapp-contact>Falar com a Academy <i class="fa-brands fa-whatsapp"></i></a></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="site-footer__top"><div class="site-footer__brand"><a class="brand brand--footer" href="index.html"><span class="brand__monogram">M</span><span class="brand__text"><strong>Moustaque</strong><small>Men`s Club</small></span></a><p>Precisão, tradição e presença em cada detalhe.</p></div><div class="site-footer__column"><h3>Navegue</h3><ul><li><a href="index.html">Início</a></li><li><a href="agendamento.html">Agendamento</a></li><li><a href="loja.html">Loja</a></li><li><a href="galeria.html">Galeria</a></li></ul></div><div class="site-footer__column"><h3>Academy</h3><ul><li><a href="#cursos">Cursos</a></li><li><a href="contato.html">Fale conosco</a></li><li><a href="mailto:moustaqueoficial@gmail.com">E-mail</a></li></ul></div><div class="site-footer__column site-footer__contact"><h3>Onde estamos</h3><p><i class="fa-solid fa-location-dot"></i><span>R. Junqueiras, 416 - Centro<br />Poços de Caldas - MG, 37701-033</span></p><p><i class="fa-solid fa-phone"></i><span>(35) 98407-8323</span></p></div></div><div class="site-footer__bottom"><p>&copy; <span id="current-year">2026</span> Moustaque. Todos os direitos reservados.</p><a class="back-to-top" href="#conteudo-principal" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></a></div></div></footer>
+  <a class="floating-booking" href="agendamento.html" aria-label="Agendar horário"><span>Agendar</span><i class="fa-solid fa-calendar-check"></i></a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="js/app.js" defer></script><script src="js/cursos.js" defer></script>
+</body>
+</html>

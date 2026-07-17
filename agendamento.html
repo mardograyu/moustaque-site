@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento | Moustaque Men`s Club</title>
+    <meta
+      name="description"
+      content="Agende sua experiência na Moustaque: escolha serviço, profissional, data e horário em poucos passos."
+    />
+    <meta name="theme-color" content="#080808" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/agendamento.css" />
+  </head>
+
+  <body class="is-loading booking-page">
+    <a class="skip-link" href="#conteudo-principal">Ir para o agendamento</a>
+
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="preloader__content">
+        <div class="brand-mark brand-mark--loading"><span class="brand-mark__ornament">M</span></div>
+        <p class="preloader__word">Moustaque</p>
+        <div class="preloader__track"><span class="preloader__progress"></span></div>
+        <span class="preloader__counter">00</span>
+      </div>
+    </div>
+
+    <div class="cursor cursor--dot" aria-hidden="true"></div>
+    <div class="cursor cursor--outline" aria-hidden="true"></div>
+    <div class="mouse-glow" aria-hidden="true"></div>
+    <canvas class="particles-canvas" id="gold-particles" aria-hidden="true"></canvas>
+
+    <header class="site-header site-header--solid" id="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="Moustaque — Página inicial">
+          <span class="brand__monogram" aria-hidden="true">M</span>
+          <span class="brand__text"><strong>Moustaque</strong><small>Men`s Club</small></span>
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+          <ul class="main-nav__list">
+            <li><a class="main-nav__link" href="index.html">Início</a></li>
+            <li><a class="main-nav__link is-active" href="agendamento.html">Agendamento</a></li>
+            <li><a class="main-nav__link" href="loja.html">Loja</a></li>
+            <li><a class="main-nav__link" href="cursos.html">Cursos</a></li>
+            <li><a class="main-nav__link" href="galeria.html">Galeria</a></li>
+            <li><a class="main-nav__link" href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="conteudo-principal">
+      <section class="booking-intro">
+        <div class="booking-intro__glow" aria-hidden="true"></div>
+        <div class="container booking-intro__content" data-aos="fade-up">
+          <div class="breadcrumbs">
+            <a href="index.html">Início</a><i class="fa-solid fa-diamond"></i><span>Agendamento</span>
+          </div>
+          <span class="section-kicker">Reserva exclusiva</span>
+          <h1>Seu momento.<br /><em>Do seu jeito.</em></h1>
+          <p>Escolha cada detalhe da experiência e confirme diretamente pelo WhatsApp.</p>
+        </div>
+      </section>
+
+      <section class="booking-section">
+        <div class="container booking-layout">
+          <div class="booking-checkout">
+            <!-- Progresso do checkout -->
+            <div class="booking-progress" aria-label="Etapas do agendamento" data-aos="fade-up">
+              <button class="progress-step is-active" type="button" data-step-target="1" aria-current="step">
+                <span>01</span><small>Serviço</small>
+              </button>
+              <span class="progress-line"><i></i></span>
+              <button class="progress-step" type="button" data-step-target="2" disabled>
+                <span>02</span><small>Barbeiro</small>
+              </button>
+              <span class="progress-line"><i></i></span>
+              <button class="progress-step" type="button" data-step-target="3" disabled>
+                <span>03</span><small>Data & hora</small>
+              </button>
+              <span class="progress-line"><i></i></span>
+              <button class="progress-step" type="button" data-step-target="4" disabled>
+                <span>04</span><small>Seus dados</small>
+              </button>
+            </div>
+
+            <form id="booking-form" novalidate>
+              <!-- Etapa 1: serviços -->
+              <fieldset class="checkout-step is-active" data-step="1">
+                <legend class="checkout-step__heading">
+                  <span>Etapa 01</span>
+                  <strong>Qual experiência você procura?</strong>
+                  <small>Selecione uma opção para continuar.</small>
+                </legend>
+
+                <div class="service-options">
+                  <label class="booking-option service-option">
+                    <input type="radio" name="service" value="Corte Masculino" data-price="80" data-duration="45 min" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="booking-option__icon"><i class="fa-solid fa-scissors"></i></span>
+                    <span class="booking-option__content">
+                      <strong>Corte Masculino</strong>
+                      <small>Visagismo, corte e finalização personalizada.</small>
+                      <em><i class="fa-regular fa-clock"></i> 45 min</em>
+                    </span>
+                    <span class="booking-option__price">R$ 80</span>
+                  </label>
+
+                  <label class="booking-option service-option">
+                    <input type="radio" name="service" value="Barba" data-price="60" data-duration="35 min" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="booking-option__icon"><i class="fa-solid fa-spray-can-sparkles"></i></span>
+                    <span class="booking-option__content">
+                      <strong>Barba</strong>
+                      <small>Toalha quente, desenho, hidratação e acabamento.</small>
+                      <em><i class="fa-regular fa-clock"></i> 35 min</em>
+                    </span>
+                    <span class="booking-option__price">R$ 60</span>
+                  </label>
+
+                  <label class="booking-option service-option booking-option--featured">
+                    <input type="radio" name="service" value="Corte e Barba" data-price="140" data-duration="80 min" />
+                    <span class="booking-option__tag">Mais escolhido</span>
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="booking-option__icon"><i class="fa-solid fa-crown"></i></span>
+                    <span class="booking-option__content">
+                      <strong>Corte e Barba</strong>
+                      <small>Corte, barba completa e ritual facial.</small>
+                      <em><i class="fa-regular fa-clock"></i> 80 min</em>
+                    </span>
+                    <span class="booking-option__price">R$ 140</span>
+                  </label>
+
+                  <label class="booking-option service-option">
+                    <input type="radio" name="service" value="Perfil" data-price="30" data-duration="40 min" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="booking-option__icon"><i class="fa-solid fa-palette"></i></span>
+                    <span class="booking-option__content">
+                      <strong>Perfil</strong>
+                      <small>Acabamento preciso das costeletas, contornos e linha da barba.</small>
+                      <em><i class="fa-regular fa-clock"></i> 40 min</em>
+                    </span>
+                    <span class="booking-option__price">R$ 30</span>
+                  </label>
+
+                  <label class="booking-option service-option">
+                    <input type="radio" name="service" value="Corte Infantil" data-price="60" data-duration="15 min" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="booking-option__icon"><i class="fa-solid fa-eye"></i></span>
+                    <span class="booking-option__content">
+                      <strong>Corte Infantil</strong>
+                      <small>Atendimento cuidadoso e confortável, com corte personalizado para valorizar o estilo da criança.</small>
+                      <em><i class="fa-regular fa-clock"></i> 15 min</em>
+                    </span>
+                    <span class="booking-option__price">R$ 60</span>
+                  </label>
+
+                  <label class="booking-option service-option">
+                    <input type="radio" name="service" value="Corte Segunda e Terça - Promoção 10% OFF" data-price="72" data-duration="45 min" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="booking-option__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    <span class="booking-option__content">
+                      <strong>Corte Segunda e Terça - Promoção 10% OFF</strong>
+                      <small>Visagismo, corte e finalização personalizada.</small>
+                      <em><i class="fa-regular fa-clock"></i> 45 min</em>
+                    </span>
+                    <span class="booking-option__price">R$ 72</span>
+                  </label>
+
+                  <label class="booking-option service-option service-option--other">
+                    <input type="radio" name="service" value="Outro serviço" data-price="0" data-duration="A confirmar" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="booking-option__icon"><i class="fa-solid fa-pen-to-square"></i></span>
+                    <span class="booking-option__content"><strong>Outros</strong><small>Descreva o serviço ou combinação que deseja.</small><em><i class="fa-regular fa-clock"></i> A confirmar</em></span>
+                    <span class="booking-option__price">Consultar</span>
+                  </label>
+                </div>
+
+                <label class="other-service-field premium-field" id="other-service-field" hidden>
+                  <span>O que você deseja fazer?</span>
+                  <div class="premium-field__textarea"><i class="fa-regular fa-pen-to-square"></i><textarea id="other-service-description" rows="3" maxlength="240" placeholder="Ex.: corte social com descoloração, avaliação de estilo..." aria-describedby="other-service-help"></textarea></div>
+                  <small id="other-service-help">Descreva com pelo menos 5 caracteres para continuar.</small>
+                </label>
+
+                <div class="checkout-actions checkout-actions--end">
+                  <button class="button button--gold next-step" type="button" data-next="2" disabled>
+                    Continuar <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </fieldset>
+
+              <!-- Etapa 2: profissionais -->
+              <fieldset class="checkout-step" data-step="2" hidden>
+                <legend class="checkout-step__heading">
+                  <span>Etapa 02</span>
+                  <strong>Quem vai cuidar do seu visual?</strong>
+                  <small>Escolha um especialista ou deixe a casa indicar.</small>
+                </legend>
+
+                <div class="barber-options">
+                  <label class="booking-option barber-option barber-option--any">
+                    <input type="radio" name="barber" value="Primeiro profissional disponível" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="barber-option__avatar"><i class="fa-solid fa-users"></i></span>
+                    <span class="booking-option__content">
+                      <strong>Primeiro disponível</strong>
+                      <small>A melhor opção para quem busca flexibilidade.</small>
+                      <em><i class="fa-solid fa-bolt"></i> Agendamento mais rápido</em>
+                    </span>
+                  </label>
+
+                  <label class="booking-option barber-option">
+                    <input type="radio" name="barber" value="Pedro" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="barber-option__avatar">
+                      <img src="img/pedro.webp" alt="Pedro" />
+                    </span>
+                    <span class="booking-option__content">
+                      <strong>Pedro</strong>
+                      <small>Clássico contemporâneo</small>
+                      <em><i class="fa-solid fa-star"></i> 5.0</em>
+                    </span>
+                  </label>
+
+                  <label class="booking-option barber-option">
+                    <input type="radio" name="barber" value="Elder" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="barber-option__avatar">
+                      <img src="img/elder.webp" alt="Elder" />
+                    </span>
+                    <span class="booking-option__content">
+                      <strong>Elder</strong>
+                      <small>Visagismo & transformação</small>
+                      <em><i class="fa-solid fa-star"></i> 4.9</em>
+                    </span>
+                  </label>
+
+                  <label class="booking-option barber-option">
+                    <input type="radio" name="barber" value="Pablo" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="barber-option__avatar">
+                      <img src="img/pablo.webp" alt="Pablo" />
+                    </span>
+                    <span class="booking-option__content">
+                      <strong>Pablo</strong>
+                      <small>Fade & beard design</small>
+                      <em><i class="fa-solid fa-star"></i> 5.0</em>
+                    </span>
+                  </label>
+
+                  <label class="booking-option barber-option">
+                    <input type="radio" name="barber" value="Wesley" />
+                    <span class="booking-option__check"><i class="fa-solid fa-check"></i></span>
+                    <span class="barber-option__avatar"><img src="img/wesley.webp" alt="Wesley" /></span>
+                    <span class="booking-option__content"><strong>Wesley</strong><small>Cortes modernos & acabamento</small><em><i class="fa-solid fa-star"></i> 5.0</em></span>
+                  </label>
+                </div>
+
+                <div class="checkout-actions">
+                  <button class="button button--outline previous-step" type="button" data-previous="1">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                  </button>
+                  <button class="button button--gold next-step" type="button" data-next="3" disabled>
+                    Continuar <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </fieldset>
+
+              <!-- Etapa 3: data e horários em botões -->
+              <fieldset class="checkout-step" data-step="3" hidden>
+                <legend class="checkout-step__heading">
+                  <span>Etapa 03</span>
+                  <strong>Quando você quer vir?</strong>
+                  <small>Escolha uma data e depois um dos horários disponíveis.</small>
+                </legend>
+
+                <div class="date-time-layout">
+                  <div class="date-picker-panel">
+                    <label for="booking-date">Data do atendimento</label>
+                    <div class="date-input-wrap">
+                      <i class="fa-regular fa-calendar"></i>
+                      <input id="booking-date" name="date" type="date" required />
+                    </div>
+                    <p><i class="fa-solid fa-circle-info"></i> Atendemos de segunda a sábado.</p>
+                  </div>
+
+                  <div class="time-picker-panel">
+                    <div class="time-picker-panel__heading">
+                      <div><span>Horários disponíveis</span><small id="selected-date-label">Selecione uma data</small></div>
+                      <span class="availability-legend"><i></i> Disponível</span>
+                    </div>
+                    <div class="time-options" id="time-options" aria-live="polite">
+                      <button type="button" data-time="09:00">09:00</button>
+                      <button type="button" data-time="09:30">09:30</button>
+                      <button type="button" data-time="10:00">10:00</button>
+                      <button type="button" data-time="10:30">10:30</button>
+                      <button type="button" data-time="11:00">11:00</button>
+                      <button type="button" data-time="11:30">11:30</button>
+                      <button type="button" data-time="14:00">14:00</button>
+                      <button type="button" data-time="14:30">14:30</button>
+                      <button type="button" data-time="15:00">15:00</button>
+                      <button type="button" data-time="15:30">15:30</button>
+                      <button type="button" data-time="16:00">16:00</button>
+                      <button type="button" data-time="16:30">16:30</button>
+                      <button type="button" data-time="17:00">17:00</button>
+                      <button type="button" data-time="17:30">17:30</button>
+                      <button type="button" data-time="18:00">18:00</button>
+                      <button type="button" data-time="19:00">19:00</button>
+                    </div>
+                    <input id="booking-time" name="time" type="hidden" required />
+                  </div>
+                </div>
+
+                <div class="checkout-actions">
+                  <button class="button button--outline previous-step" type="button" data-previous="2">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                  </button>
+                  <button class="button button--gold next-step" type="button" data-next="4" disabled>
+                    Continuar <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </fieldset>
+
+              <!-- Etapa 4: dados pessoais -->
+              <fieldset class="checkout-step" data-step="4" hidden>
+                <legend class="checkout-step__heading">
+                  <span>Etapa 04</span>
+                  <strong>Para quem reservamos a cadeira?</strong>
+                  <small>Preencha seus dados para finalizar.</small>
+                </legend>
+
+                <div class="customer-form">
+                  <label class="premium-field premium-field--full">
+                    <span>Nome completo</span>
+                    <div><i class="fa-regular fa-user"></i><input id="customer-name" name="name" type="text" placeholder="Como podemos chamar você?" autocomplete="name" minlength="3" required /></div>
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="premium-field premium-field--full">
+                    <span>WhatsApp</span>
+                    <div><i class="fa-brands fa-whatsapp"></i><input id="customer-phone" name="phone" type="tel" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="numeric" required /></div>
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="premium-field premium-field--full">
+                    <span>Observações <em>opcional</em></span>
+                    <div class="premium-field__textarea"><i class="fa-regular fa-message"></i><textarea id="customer-notes" name="notes" rows="4" maxlength="300" placeholder="Preferências, referências ou algo que devemos saber..."></textarea></div>
+                    <small class="character-count"><span>0</span>/300</small>
+                  </label>
+
+                  <label class="consent-check premium-field--full">
+                    <input id="booking-consent" type="checkbox" required />
+                    <span><i class="fa-solid fa-check"></i></span>
+                    <small>Concordo em enviar estes dados pelo WhatsApp para confirmar meu agendamento.</small>
+                  </label>
+                </div>
+
+                <div class="checkout-actions">
+                  <button class="button button--outline previous-step" type="button" data-previous="3">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                  </button>
+                  <button class="button button--gold button--glow" id="confirm-booking" type="submit">
+                    Confirmar no WhatsApp <i class="fa-brands fa-whatsapp"></i>
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <!-- Resumo que acompanha todas as etapas -->
+          <aside class="booking-summary" data-aos="fade-left" aria-labelledby="summary-title">
+            <div class="booking-summary__head">
+              <span>Resumo da reserva</span>
+              <i class="fa-solid fa-receipt"></i>
+            </div>
+            <h2 id="summary-title">Sua experiência</h2>
+
+            <div class="summary-empty" id="summary-empty">
+              <i class="fa-solid fa-chair"></i>
+              <p>Suas escolhas aparecerão aqui.</p>
+            </div>
+
+            <dl class="summary-list" id="summary-list">
+              <div><dt><i class="fa-solid fa-scissors"></i> Serviço</dt><dd id="summary-service">A escolher</dd></div>
+              <div><dt><i class="fa-regular fa-user"></i> Barbeiro</dt><dd id="summary-barber">A escolher</dd></div>
+              <div><dt><i class="fa-regular fa-calendar"></i> Data</dt><dd id="summary-date">A escolher</dd></div>
+              <div><dt><i class="fa-regular fa-clock"></i> Horário</dt><dd id="summary-time">A escolher</dd></div>
+            </dl>
+
+            <div class="summary-total">
+              <div><span>Tempo estimado</span><strong id="summary-duration">—</strong></div>
+              <div><span>Valor do serviço</span><strong id="summary-price">R$ 0,00</strong></div>
+            </div>
+
+            <div class="summary-security">
+              <i class="fa-solid fa-shield-halved"></i>
+              <p><strong>Confirmação segura</strong><span>Você revisará tudo no WhatsApp antes de enviar.</span></p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="booking-benefits">
+        <div class="container">
+          <article><i class="fa-regular fa-clock"></i><div><strong>Pontualidade</strong><span>Seu tempo é respeitado.</span></div></article>
+          <article><i class="fa-solid fa-medal"></i><div><strong>Excelência</strong><span>Profissionais especialistas.</span></div></article>
+          <article><i class="fa-solid fa-rotate-left"></i><div><strong>Flexibilidade</strong><span>Reagende falando conosco.</span></div></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer site-footer--compact">
+      <div class="container">
+        <a class="brand brand--footer" href="index.html" aria-label="Moustaque — Página inicial"><span class="brand__monogram">M</span><span class="brand__text"><strong>Moustaque</strong><small>Men`s Club</small></span></a>
+        <div class="site-footer__bottom">
+          <p>&copy; <span id="current-year">2026</span> Moustaque. Todos os direitos reservados.</p>
+          <div><a href="index.html">Início</a><a href="contato.html">Precisa de ajuda?</a></div>
+          <a class="back-to-top" href="#conteudo-principal" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/agendamento.js" defer></script>
+  </body>
+</html>

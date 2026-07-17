@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria | Moustaque Men`s Club</title>
+    <meta name="description" content="Conheça cortes, barbas, clientes e o ambiente premium da Moustaque." />
+    <meta name="theme-color" content="#080808" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/galeria.css" />
+  </head>
+
+  <body class="is-loading gallery-page">
+    <a class="skip-link" href="#galeria-grid">Ir para a galeria</a>
+    <div class="preloader" id="preloader" aria-hidden="true"><div class="preloader__content"><div class="brand-mark brand-mark--loading"><span class="brand-mark__ornament">M</span></div><p class="preloader__word">Moustaque</p><div class="preloader__track"><span class="preloader__progress"></span></div><span class="preloader__counter">00</span></div></div>
+    <div class="cursor cursor--dot" aria-hidden="true"></div><div class="cursor cursor--outline" aria-hidden="true"></div><div class="mouse-glow" aria-hidden="true"></div><canvas class="particles-canvas" id="gold-particles" aria-hidden="true"></canvas>
+
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="Moustaque — Página inicial"><span class="brand__monogram">M</span><span class="brand__text"><strong>Moustaque</strong><small>Men`s Club</small></span></a>
+        <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+          <ul class="main-nav__list"><li><a class="main-nav__link" href="index.html">Início</a></li><li><a class="main-nav__link" href="agendamento.html">Agendamento</a></li><li><a class="main-nav__link" href="loja.html">Loja</a></li><li><a class="main-nav__link" href="cursos.html">Cursos</a></li><li><a class="main-nav__link is-active" href="galeria.html">Galeria</a></li><li><a class="main-nav__link" href="contato.html">Contato</a></li></ul>
+          <a class="button button--gold main-nav__cta" href="agendamento.html"><span>Agendar horário</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="conteudo-principal">
+      <section class="gallery-hero">
+        <div class="gallery-hero__background" data-parallax="0.09" aria-hidden="true"></div>
+        <div class="gallery-hero__overlay"></div>
+        <div class="container gallery-hero__content" data-aos="fade-up">
+          <div class="breadcrumbs"><a href="index.html">Início</a><i class="fa-solid fa-diamond"></i><span>Galeria</span></div>
+          <span class="section-kicker">Visual stories</span>
+          <h1>Precisão capturada.<br /><em>Presença revelada.</em></h1>
+          <p>Um olhar sobre os detalhes, as transformações e a atmosfera que tornam cada visita única.</p>
+        </div>
+        <a class="gallery-hero__scroll" href="#galeria-grid" aria-label="Explorar galeria"><span>Explorar</span><i class="fa-solid fa-arrow-down"></i></a>
+      </section>
+
+      <section class="gallery-showcase" id="galeria-grid">
+        <div class="container">
+          <header class="gallery-showcase__header" data-aos="fade-up">
+            <div><span class="section-kicker">Portfólio Moustaque</span><h2>Escolha um universo.</h2></div>
+            <div class="gallery-filters" role="group" aria-label="Filtrar galeria">
+              <button class="is-active" type="button" data-filter="todos">Todos <span>12</span></button>
+              <button type="button" data-filter="cortes">Cortes <span>4</span></button>
+              <button type="button" data-filter="barba">Barba <span>3</span></button>
+              <button type="button" data-filter="ambiente">Ambiente <span>3</span></button>
+              <button type="button" data-filter="clientes">Clientes <span>2</span></button>
+            </div>
+          </header>
+
+          <div class="masonry-grid" id="masonry-grid" aria-live="polite">
+            <figure class="gallery-item gallery-item--tall" data-category="cortes" data-title="Precisão em movimento" data-index="0">
+              <button type="button" aria-label="Ampliar corte masculino com tesoura">
+                <img src="img/salao-atendimento.webp" alt="Equipe Moustaque realizando atendimentos" width="1800" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>01 — Cortes</small><strong>Precisão em movimento</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item gallery-item--wide" data-category="ambiente" data-title="Atmosfera Moustaque" data-index="1">
+              <button type="button" aria-label="Ampliar ambiente da barbearia">
+                <img src="img/ambiente-geral.webp" alt="Interior sofisticado da Moustaque" width="1800" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>02 — Ambiente</small><strong>Atmosfera Moustaque</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item" data-category="barba" data-title="Contornos impecáveis" data-index="2">
+              <button type="button" aria-label="Ampliar acabamento de barba">
+                <img src="img/ritual-barba.webp" alt="Acabamento preciso no ritual de barba" width="1800" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>03 — Barba</small><strong>Contornos impecáveis</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item" data-category="clientes" data-title="Confiança renovada" data-index="3">
+              <button type="button" aria-label="Ampliar cliente após atendimento">
+                <img src="img/pedro.webp" alt="Pedro, profissional da Moustaque" width="1200" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>04 — Clientes</small><strong>Confiança renovada</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item gallery-item--tall" data-category="cortes" data-title="Textura e personalidade" data-index="4">
+              <button type="button" aria-label="Ampliar corte texturizado">
+                <img src="img/wesley.webp" alt="Wesley, especialista em cortes modernos" width="1200" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>05 — Cortes</small><strong>Textura e personalidade</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item" data-category="ambiente" data-title="Tempo para você" data-index="5">
+              <button type="button" aria-label="Ampliar cadeira clássica de barbeiro">
+                <img src="img/cadeiras.webp" alt="Cadeiras e espelhos do ambiente Moustaque" width="1200" height="1600" loading="lazy" />
+                <span class="gallery-item__overlay"><small>06 — Ambiente</small><strong>Tempo para você</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item gallery-item--wide" data-category="barba" data-title="Ritual da navalha" data-index="6">
+              <button type="button" aria-label="Ampliar ritual de barba com navalha">
+                <img src="img/ritual-barba.webp" alt="Profissional preparando o ritual de barba" width="1800" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>07 — Barba</small><strong>Ritual da navalha</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item" data-category="cortes" data-title="Detalhe que transforma" data-index="7">
+              <button type="button" aria-label="Ampliar detalhe de acabamento">
+                <img src="img/pablo.webp" alt="Pablo, especialista em visagismo" width="1200" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>08 — Cortes</small><strong>Detalhe que transforma</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item gallery-item--tall" data-category="ambiente" data-title="Onde tradição encontra futuro" data-index="8">
+              <button type="button" aria-label="Ampliar detalhes do ambiente">
+                <img src="img/estante.webp" alt="Estante de produtos e detalhes da Moustaque" width="1200" height="1600" loading="lazy" />
+                <span class="gallery-item__overlay"><small>09 — Ambiente</small><strong>Tradição encontra futuro</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item" data-category="clientes" data-title="Uma nova assinatura" data-index="9">
+              <button type="button" aria-label="Ampliar retrato de cliente">
+                <img src="img/elder.webp" alt="Elder, especialista em fades" width="1200" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>10 — Clientes</small><strong>Uma nova assinatura</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item" data-category="barba" data-title="Cuidado sem pressa" data-index="10">
+              <button type="button" aria-label="Ampliar hidratação de barba">
+                <img src="img/ritual-barba.webp" alt="Cliente recebendo cuidado de barba" width="1800" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>11 — Barba</small><strong>Cuidado sem pressa</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+
+            <figure class="gallery-item gallery-item--wide" data-category="cortes" data-title="A arte do acabamento" data-index="11">
+              <button type="button" aria-label="Ampliar finalização de corte">
+                <img src="img/ambiente-geral.webp" alt="Visão geral da experiência Moustaque" width="1800" height="1200" loading="lazy" />
+                <span class="gallery-item__overlay"><small>12 — Cortes</small><strong>A arte do acabamento</strong><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </figure>
+          </div>
+
+          <p class="gallery-results" id="gallery-results"><span>12</span> imagens exibidas</p>
+        </div>
+      </section>
+
+      <section class="gallery-cta">
+        <div class="gallery-cta__background" data-parallax="0.1" aria-hidden="true"></div><div class="gallery-cta__overlay"></div>
+        <div class="container gallery-cta__content" data-aos="fade-up"><span class="section-kicker">Sua vez</span><h2>Pronto para fazer parte <em>da nossa galeria?</em></h2><p>Reserve sua experiência e encontre a versão que melhor representa você.</p><a class="button button--gold button--large button--glow magnetic" href="agendamento.html">Agendar horário <i class="fa-solid fa-calendar-check"></i></a></div>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <div class="gallery-lightbox__backdrop" data-lightbox-close></div>
+      <header class="gallery-lightbox__header"><a class="brand" href="index.html"><span class="brand__monogram">M</span><span class="brand__text"><strong>Moustaque</strong><small>Visual stories</small></span></a><button type="button" data-lightbox-close aria-label="Fechar galeria"><i class="fa-solid fa-xmark"></i></button></header>
+      <button class="gallery-lightbox__nav gallery-lightbox__nav--prev" id="lightbox-prev" type="button" aria-label="Imagem anterior"><i class="fa-solid fa-arrow-left"></i></button>
+      <figure class="gallery-lightbox__figure"><div class="gallery-lightbox__loader"><i class="fa-solid fa-circle-notch fa-spin"></i></div><img id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" /><figcaption><div><span id="lightbox-category"></span><h2 id="lightbox-title"></h2></div><div class="gallery-lightbox__counter"><strong id="lightbox-current">01</strong><i></i><span id="lightbox-total">12</span></div></figcaption></figure>
+      <button class="gallery-lightbox__nav gallery-lightbox__nav--next" id="lightbox-next" type="button" aria-label="Próxima imagem"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container"><div class="site-footer__top"><div class="site-footer__brand"><a class="brand brand--footer" href="index.html"><span class="brand__monogram">M</span><span class="brand__text"><strong>Moustaque</strong><small>Barber Experience</small></span></a><p>Precisão, tradição e presença em cada detalhe.</p><div class="social-links"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a><a href="contato.html" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div></div><div class="site-footer__column"><h3>Navegue</h3><ul><li><a href="index.html">Início</a></li><li><a href="index.html#servicos">Serviços</a></li><li><a href="loja.html">Loja</a></li><li><a href="contato.html">Contato</a></li></ul></div><div class="site-footer__column"><h3>Experiência</h3><ul><li><a href="agendamento.html">Agendar</a></li><li><a href="#galeria-grid">Cortes</a></li><li><a href="#galeria-grid">Barba</a></li><li><a href="#galeria-grid">Ambiente</a></li></ul></div><div class="site-footer__column site-footer__contact"><h3>Instagram</h3><p><i class="fa-brands fa-instagram"></i><span>Acompanhe novas transformações e bastidores.</span></p><a class="text-link" href="#">@moustaque <i class="fa-solid fa-arrow-right"></i></a></div></div><div class="site-footer__bottom"><p>&copy; <span id="current-year">2026</span> Moustaque. Todos os direitos reservados.</p><div><a href="#">Privacidade</a><a href="#">Termos</a></div><a class="back-to-top" href="#conteudo-principal" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></a></div></div>
+    </footer>
+
+    <a class="floating-booking" href="agendamento.html" aria-label="Agendar horário"><span>Agendar</span><i class="fa-solid fa-calendar-check"></i></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="js/app.js" defer></script><script src="js/galeria.js" defer></script>
+  </body>
+</html>
